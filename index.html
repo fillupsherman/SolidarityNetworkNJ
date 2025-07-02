@@ -15,7 +15,7 @@
     header h1{font-size:clamp(2rem,5vw,4rem);margin-bottom:.5rem;animation:fadeSlide 1s ease-out;}
     header p{opacity:.85;}
     @keyframes fadeSlide{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
-    nav{margin-top:1rem;}
+    nav{margin-top:1rem;position:relative;z-index:1;}
     nav a{color:#fff;text-decoration:none;margin:0 .75rem;font-weight:600;position:relative;}
     nav a::after{content:"";display:block;height:2px;width:0;background:var(--accent);transition:width .3s;}
     nav a:hover::after{width:100%;}
@@ -40,6 +40,7 @@
     .btn:hover{background:#06357a;}
     /* --- FOOTER --- */
     footer{background:var(--brand);color:#fff;text-align:center;padding:1rem;margin-top:2rem;font-size:.875rem;}
+    #hero-canvas{position:absolute;bottom:0;left:0;width:100%;height:150px;pointer-events:none;z-index:0;}
   </style>
 </head>
 <body>

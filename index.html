@@ -246,12 +246,43 @@
       const grid=document.getElementById('events-grid');
       if(!events.length){grid.innerHTML='<p>No events scheduled. Check back soon!</p>';return;}
       events.sort((a,b)=>new Date(a.date)-new Date(b.date));
-      events.forEach(evt=>{
-        const el=document.createElement('div');el.className='event';
-        const imgHtml = evt.img ? `<img src="${evt.img}" alt="${evt.title}" class="event-img">` : '';
-        el.innerHTML = `${imgHtml}<h3>${evt.title}</h3><p><strong>${new Date(evt.date).toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric',hour:'numeric'})}</strong> — ${evt.location}</p><p>${evt.description}</p>`;
-        grid.appendChild(el);
-      });
+      const slugify = s => s
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "");
+      events.forEach(evt => {
+        const slug = slugify(evt.title);
+        const url  = `${location.origin}${location.pathname}#${slug}`;
+
+        const el   = document.createElement('div');
+        el.className = 'event';
+        el.id        = slug;                 // ← anchor target
+
+        const imgHTML = evt.img
+            ? `<img src="${evt.img}" alt="${evt.title}" class="event-img">`
+            : '';
+
+        const ts = new Date(evt.date).toLocaleString(undefined, {
+            weekday:'short', month:'short', day:'numeric',
+            hour:'numeric'});
+
+        el.innerHTML = `
+            ${imgHTML}
+            <h3>${evt.title}</h3>
+            <p><strong>${ts}</strong> — ${evt.location}</p>
+            <p>${evt.description}</p>
+            <p style="margin-top:.5rem;">
+            <a class="btn"
+                href="https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(evt.title)}"
+                target="_blank" rel="noopener"
+                aria-label="Share ${evt.title} on X/Twitter">
+                Share Event
+            </a>
+            </p>`;
+
+  grid.appendChild(el);
+});
+
     })
     .catch(()=>{document.getElementById('events-grid').innerHTML='<p>Could not load events.</p>';});
 </script>

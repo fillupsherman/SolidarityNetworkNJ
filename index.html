@@ -39,7 +39,20 @@
     .btn{display:inline-block;background:var(--brand);color:#fff;padding:.5rem 1rem;border-radius:.5rem;text-decoration:none;font-weight:600;}
     .btn:hover{background:#06357a;}
     /* --- FOOTER --- */
-    footer{background:var(--brand);color:#fff;text-align:center;padding:1rem;margin-top:2rem;font-size:.875rem;}
+    footer {
+      background: var(--brand); color: #fff;
+      text-align: center; padding: 1rem 0; font-size: .875rem;
+    }
+    .share {
+      margin-top: .5rem; display: flex; justify-content: center;
+      align-items: center; gap: .75rem; flex-wrap: wrap;
+    }
+    .share a {
+      color: #fff; text-decoration: none;
+      display: inline-flex; align-items: center; gap: .25rem; font-size: 1rem;
+    }
+    .share a svg      { width: 18px; height: 18px; fill: #fff; }
+    .share a:hover svg{ fill: var(--accent); }
     #hero-canvas{position:absolute;bottom:0;left:0;width:100%;height:150px;pointer-events:none;z-index:0;}
   </style>
 </head>
@@ -142,11 +155,62 @@
     </section>
 </main>
 
-<footer>© <span id="year"></span> Solidarity Action NJ • <a href="mailto:info@solidarityactionnj.org" style="color:var(--accent);">Email&nbsp;Us</a></footer>
+<footer>
+    <div class="share">
+        <span>Share:</span>
+
+        <!-- Twitter / X -->
+        <a id="share-twitter" aria-label="Share on X/Twitter" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path
+                d="M22.46 6c-.77.35-1.6.58-2.46.69a4.27 4.27 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.71 1.04 4.26 4.26 0 0 0-7.3 3.88A12.1 12.1 0 0 1 3.15 4.8a4.25 4.25 0 0 0 1.32 5.68 4.23 4.23 0 0 1-1.93-.54v.05a4.26 4.26 0 0 0 3.42 4.18 4.3 4.3 0 0 1-1.92.07 4.27 4.27 0 0 0 3.98 2.96A8.55 8.55 0 0 1 2 19.54 12.07 12.07 0 0 0 8.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.35-.02-.53A8.35 8.35 0 0 0 22.46 6z"/>
+            </svg>
+        </a>
+
+        <!-- Facebook -->
+        <a id="share-facebook" aria-label="Share on Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path
+                d="M22 12A10 10 0 1 0 10.8 21.9v-6.2h-2v-2.5h2v-1.9c0-2 1.2-3.1 3-3.1.9 0 1.8.16 1.8.16v2h-1c-1 0-1.3.64-1.3 1.3v1.6h2.3l-.37 2.5h-1.93V22A10 10 0 0 0 22 12"/>
+            </svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a id="share-whatsapp" aria-label="Share on WhatsApp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path
+                d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.66.15-.19.3-.76.97-.93 1.17-.17.2-.34.22-.63.07-.29-.15-1.23-.45-2.35-1.43-.87-.77-1.46-1.72-1.63-2-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.5-.17 0-.37-.02-.57-.02-.2 0-.52.07-.8.37-.28.3-1.1 1.05-1.1 2.55 0 1.5 1.1 2.96 1.25 3.17.15.2 2.17 3.42 5.26 4.8.74.32 1.32.5 1.77.64.75.24 1.43.2 1.97.12.6-.1 1.77-.72 2.03-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.9 14.6L2 22l5.5-1.87A10 10 0 1 0 12 2z"/>
+            </svg>
+        </a>
+
+        <!-- Email -->
+        <a id="share-email" aria-label="Share via Email" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path
+                d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+        </a>
+    </div>
+    © <span id="year"></span> Solidarity Action NJ • <a href="mailto:info@solidarityactionnj.org" style="color:var(--accent);">Email&nbsp;Us</a>
+</footer>
 
 <script>
   // --- DYNAMIC YEAR ---
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* --- SHARE LINKS --- */
+  const url  = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent('Solidarity Action NJ');
+  document.getElementById('share-twitter' ).href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+  document.getElementById('share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+  document.getElementById('share-whatsapp').href = `https://api.whatsapp.com/send?text=${text}%20${url}`;
+  document.getElementById('share-email'   ).href = `mailto:?subject=${text}&body=${text}%20-%20${url}`;
+
+  /* Native share sheet on mobile */
+  if (navigator.share) {
+    document.querySelectorAll('.share a').forEach(a => a.style.display = 'none');
+    const btn = document.createElement('button');
+    btn.textContent = 'Share';
+    btn.className   = 'btn';
+    btn.onclick     = () => navigator.share({ title: text, url: window.location.href });
+    document.querySelector('.share').appendChild(btn);
+  }
 
   // --- PARTICLE HERO ---
   const canvas = document.getElementById('hero-canvas');

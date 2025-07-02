@@ -320,8 +320,16 @@
                 <eventFooter>
             </p>`;
 
-  grid.appendChild(el);
-});
+        grid.appendChild(el);
+        if (navigator.share) {
+          document.querySelectorAll('.shareEvent a').forEach(a => a.style.display = 'none');
+          const btn = document.createElement('button');
+          btn.textContent = 'Share';
+          btn.className   = 'btn';
+          btn.onclick     = () => navigator.share({ title: evt.title, url: url });
+          document.querySelector('.shareEvent').appendChild(btn);
+        }
+      });
 
     })
     .catch(()=>{document.getElementById('events-grid').innerHTML='<p>Could not load events.</p>';});

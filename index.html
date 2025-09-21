@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Solidarity Action NJ</title>
+  <title>North Bergen Community Defense</title>
   <style>
     /* --- BASIC RESET & THEME TOKENS --- */
     html{scroll-behavior:smooth;}
@@ -67,13 +67,14 @@
     }
     .shareEvent a svg      { width: 18px; height: 18px; fill: #0d46a0; }
     .shareEvent a:hover svg{ fill: red; }
+    .urgentRole { color: red; }
     #hero-canvas{position:absolute;bottom:0;left:0;width:100%;height:150px;pointer-events:none;z-index:0;}
   </style>
 </head>
 <body>
 <header>
   <img src="images/logo.png"
-     alt="Solidarity Action NJ landscape logo"
+     alt="North Bergen Community Defense Logo"
      style="width:100%;max-width:800px;height:270px;margin:1rem 0;">
   <h2>Grass‑roots organizing for rapid-response and direct community action</h2>
   <nav>
@@ -89,54 +90,63 @@
     <p>We are neighbors from across New Jersey building a resistance team, including rapid-response networks and direct action.</p>
   </section>
 
-  <section id="events" class="card">
+ <!-- <section id="events" class="card">
     <h2>Upcoming Events</h2>
-    <div class="events-grid" id="events-grid"><!-- events injected by JS --></div>
-  </section>
+    <div class="events-grid" id="events-grid"></div>
+  </section> -->
 
     <section id="join" class="card">
         <h2>Join Us</h2>
         <p>We’re a small team trying to build something from the ground up, and we’re 100 % volunteer‑run. Below are the roles we urgently need—hover for details and time commitments.</p>
         <div class="roles-grid">
           <!-- Role cards (6) -->
-        <div class="role">
-            <h3>Immigration Attorney / BIA‑Accredited Rep</h3>
-            <p class="tagline">Turns evidence into legal shields.</p>
-            <ul>
-                <li>File bond motions, stays, I‑246s, motions to reopen &amp; suppress</li>
-                <li>Advise rapid‑response team on legality during raids</li>
-                <li>Coordinate with congressional offices for casework inquiries</li>
-                <li>Coordinate with other leadership team members</li>
-                <li>Offer assistance to the attorneys of ICE detainees</li>
-            </ul>
-        </div>
           
-        <div class="role">
-            <h3>Media Lead</h3>
-            <p class="tagline">Turns facts into public pressure.</p>
+          <div class="role">
+              <h3>Recruiters/Intelligence</h3>
+              <p class="tagline urgentRole">*Urgent!</p>
+              <ul>
+                  <li>Flexible time commitment</li>
+                  <li>Pass out recruitment information and post flyers</li>
+                  <li>Spread important information to the community</li>
+                  <li>Gather information and recruit members at community events, faith centers, and campuses</li>
+              </ul>
+          </div>
+
+          <div class="role">
+              <h3>Media Lead</h3>
+              <p class="tagline urgentRole">*Urgent!</p>
+              <ul>
+                  <li>Heavy time commitment</li>
+                  <li>Create and publish social media content</li>
+                  <li>Maintain social media user engagement</li>
+                  <li>Draft press releases, op‑eds, &amp; rapid rebuttals</li>
+                  <li>Coordinate with other leadership team members</li>
+              </ul>
+          </div>
+        
+          <div class="role">
+              <h3>Software Lead / Tech Maintainer</h3>
+              <ul>
+                  <li>Moderate time commitmemnt</li>
+                  <li>Own the website</li>
+                  <li>Build / maintain custom tools (e.g., secure evidence upload, bots for the social media team)</li>
+                  <li>Coordinate with other leadership team members</li>
+              </ul>
+          </div>
+
+          <div class="role">
+            <h3>Attorney</h3>
             <ul>
-                <li>Draft press releases, op‑eds, &amp; rapid rebuttals</li>
-                <li>Curate &amp; publish verified raid footage</li>
-                <li>Train spokespeople, prep families for interviews</li>
-                <li>Maintain live social threads during actions</li>
-                <li>Publish social media content</li>
-                <li>Coordinate with other leadership team members</li>
-            </ul>
-        </div>
-          
-        <div class="role">
-            <h3>Software Lead / Tech Maintainer</h3>
-            <p class="tagline">Keeps the digital backbone humming.</p>
-            <ul>
-                <li>Own the website</li>
-                <li>Build / maintain custom tools (e.g., secure evidence upload, bots for the social media team)</li>
+                <li>Sporadic time commitment</li>
+                <li>Advise the organization on legal matters</li>
+                <li>Represent the ground-team in legal cases</li>
+                <li>Coordinate with lawyers from related activist groups</li>
                 <li>Coordinate with other leadership team members</li>
             </ul>
         </div>
           
         <div class="role">
             <h3>Protest &amp; Event Lead</h3>
-            <p class="tagline">Puts our message in the streets.</p>
             <ul>
                 <li>Plan vigils, press conferences, court‑support rallies</li>
                 <li>Secure permits, liaise with marshals &amp; legal observers</li>
@@ -145,26 +155,6 @@
             </ul>
         </div>
           
-        <div class="role">
-            <h3>Videographers / Field Responders</h3>
-            <p class="tagline">Eyes and evidence on the ground.</p>
-            <ul>
-                <li>Deploy on hotline alerts, film from public space, collect witness info</li>
-                <li>Upload raw footage to the secure evidence upload tool within the hour</li>
-                <li>Request ICE ID themselves and show warrants/badges</li>
-                <li>Think fast to make the surrounding public aware of ICE's presence(safety).</li>
-            </ul>
-        </div>
-          
-        <div class="role">
-            <h3>Recruiters/Intelligence</h3>
-            <p class="tagline">Keep the pipeline of volunteers full.</p>
-            <ul>
-                <li>Pass out recruitment information</li>
-                <li>Spread important information to the community as it becomes available</li>
-                <li>Gather information and recruit members at community events, faith centers, campuses</li>
-            </ul>
-        </div>
         <p style="text-align:center;margin-top:1rem;"><a class="btn" href="https://forms.gle/u5wQGVmdvCjhK2vk8" target="_blank" rel="noopener">Volunteer →</a></p>
     </section>
 </main>
@@ -201,7 +191,7 @@
             </svg>
         </a>
     </div>
-    © <span id="year"></span> Solidarity Action NJ • <a href="mailto:SolidarityNetwork@activist.com" style="color:var(--accent);">Email&nbsp;Us: SolidarityNetwork@activist.com</a>
+    © <span id="year"></span> North Bergen Community Defense • <a href="mailto:NorthBergenDefense@ProtonMail.com" style="color:var(--accent);">Email&nbsp;Us: NorthBergenDefense@ProtonMail.com</a>
 </footer>
 
 <script>
@@ -210,7 +200,7 @@
 
   /* --- SHARE LINKS --- */
   const url  = encodeURIComponent(window.location.href);
-  const text = encodeURIComponent('Solidarity Action NJ');
+  const text = encodeURIComponent('North Bergen Community Defense');
   document.getElementById('share-twitter' ).href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
   document.getElementById('share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
   document.getElementById('share-whatsapp').href = `https://api.whatsapp.com/send?text=${text}%20${url}`;

@@ -1,103 +1,106 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>North Bergen Community Defense</title>
-  <style>
-    /* --- BASIC RESET & THEME TOKENS --- */
-    html{scroll-behavior:smooth;}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    :root{--brand:#0d46a0;--accent:#ffdd57;--text:#222;--bg:#f5f7fa;}
-    body{font-family:system-ui,sans-serif;line-height:1.5;background:var(--bg);color:var(--text);}
-    /* --- HEADER / HERO --- */
-    header{background:var(--brand);color:#fff;padding:2rem 1rem;text-align:center;position:relative;overflow:hidden;}
-    header h1{font-size:clamp(2rem,5vw,4rem);margin-bottom:.5rem;animation:fadeSlide 1s ease-out;}
-    header p{opacity:.85;}
-    @keyframes fadeSlide{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
-    nav{margin-top:1rem;position:relative;z-index:1;}
-    nav a{color:#fff;text-decoration:none;margin:0 .75rem;font-weight:600;position:relative;}
-    nav a::after{content:"";display:block;height:2px;width:0;background:rgba(255, 0, 0, 0.685);transition:width .3s;}
-    nav a:hover::after{width:100%;}
-    /* --- LAYOUT --- */
-    main{max-width:900px;margin:2rem auto;padding:0 1rem;}
-    .card{background:#fff;border-radius:1rem;box-shadow:0 4px 8px rgba(0,0,0,.05);padding:2rem;margin-bottom:2rem;overflow:hidden;}
-    /* --- EVENTS GRID --- */
-    .events-grid{display:grid;gap:1.5rem;}
-    .event{padding:1.5rem;border-left:4px solid var(--brand);border-radius:.5rem;background:#fafafa;transition:transform .2s;}
-    .event:hover{transform:translateY(-4px);}  
-    .event h3{margin-bottom:.25rem;}
-    .event-img{width:100%;object-fit:cover;border-radius:.5rem;margin-bottom:.75rem;}
-    /* --- JOIN US (ROLES) --- */
-    .roles-grid{display:grid;gap:1.5rem;}
-    @media(min-width:700px){.roles-grid{grid-template-columns:1fr 1fr;}}
-    .role{background:#fafafa;border-left:4px solid blue;padding:1.5rem;border-radius:.5rem;box-shadow:0 2px 4px rgba(0,0,0,.04);transition:transform .2s;}
-    .role:hover{transform:translateY(-4px);}  
-    .role .tagline{font-style:italic;margin-bottom:.5rem;}  
-    .role ul{margin-left:1rem;margin-bottom:.5rem;list-style:square;}
-    .role .time{font-size:.875rem;color:#555;}
-    .btn{display:inline-block;background:var(--brand);color:#fff;padding:.5rem 1rem;border-radius:.5rem;text-decoration:none;font-weight:600;}
-    .btn:hover{background:#06357a;}
-    /* --- FOOTER --- */
-    footer {
-      background: var(--brand); color: #fff;
-      text-align: center; padding: 1rem 0; font-size: .875rem;
-    }
-    .share {
-      margin-top: .5rem; display: flex; justify-content: center;
-      align-items: center; gap: .75rem; flex-wrap: wrap;
-    }
-    .share a {
-      color: #fff; text-decoration: none;
-      display: inline-flex; align-items: center; gap: .25rem; font-size: 1rem;
-    }
-    .share a svg      { width: 18px; height: 18px; fill: #fff; }
-    .share a:hover svg{ fill: var(--accent); }
-    eventFooter {
-      background: var(--brand); color: #0d46a0;
-      text-align: center; padding: 1rem 0; font-size: .875rem;
-    }
-    .shareEvent {
-      margin-top: .5rem; display: flex; justify-content: flex-start;
-      align-items: center; gap: .75rem; flex-wrap: wrap;
-    }
-    .shareEvent a {
-      color: #0d46a0; text-decoration: none;
-      display: inline-flex; align-items: center; gap: .25rem; font-size: 1rem;
-    }
-    .shareEvent a svg      { width: 18px; height: 18px; fill: #0d46a0; }
-    .shareEvent a:hover svg{ fill: red; }
-    .urgentRole { color: red; }
-    h1.gradient-title {
-        background: linear-gradient(90deg, red, white);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        color: transparent;
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>North Bergen Community Defense</title>
+    <style>
+      /* --- BASIC RESET & THEME TOKENS --- */
+      html{scroll-behavior:smooth;}
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+      :root{--brand:#0d46a0;--accent:#ffdd57;--text:#222;--bg:#f5f7fa;}
+      body{font-family:system-ui,sans-serif;line-height:1.5;background:var(--bg);color:var(--text);}
+      /* --- HEADER / HERO --- */
+      header{background:var(--brand);color:#fff;padding:2rem 1rem;text-align:center;position:relative;overflow:hidden;}
+      header h1{font-size:clamp(2rem,5vw,4rem);margin-bottom:.5rem;animation:fadeSlide 1s ease-out;}
+      header p{opacity:.85;}
+      @keyframes fadeSlide{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+      nav{margin-top:1rem;position:relative;z-index:1;}
+      nav a{color:#fff;text-decoration:none;margin:0 .75rem;font-weight:600;position:relative;}
+      nav a::after{content:"";display:block;height:2px;width:0;background:rgba(255, 0, 0, 0.685);transition:width .3s;}
+      nav a:hover::after{width:100%;}
+      /* --- LAYOUT --- */
+      main{max-width:900px;margin:2rem auto;padding:0 1rem;}
+      .card{background:#fff;border-radius:1rem;box-shadow:0 4px 8px rgba(0,0,0,.05);padding:2rem;margin-bottom:2rem;overflow:hidden;}
+      /* --- EVENTS GRID --- */
+      .events-grid{display:grid;gap:1.5rem;}
+      .event{padding:1.5rem;border-left:4px solid var(--brand);border-radius:.5rem;background:#fafafa;transition:transform .2s;}
+      .event:hover{transform:translateY(-4px);}  
+      .event h3{margin-bottom:.25rem;}
+      .event-img{width:100%;object-fit:cover;border-radius:.5rem;margin-bottom:.75rem;}
+      /* --- JOIN US (ROLES) --- */
+      .roles-grid{display:grid;gap:1.5rem;}
+      @media(min-width:700px){.roles-grid{grid-template-columns:1fr 1fr;}}
+      .role{background:#fafafa;border-left:4px solid blue;padding:1.5rem;border-radius:.5rem;box-shadow:0 2px 4px rgba(0,0,0,.04);transition:transform .2s;}
+      .role:hover{transform:translateY(-4px);}  
+      .role .tagline{font-style:italic;margin-bottom:.5rem;}  
+      .role ul{margin-left:1rem;margin-bottom:.5rem;list-style:square;}
+      .role .time{font-size:.875rem;color:#555;}
+      .btn{display:inline-block;background:var(--brand);color:#fff;padding:.5rem 1rem;border-radius:.5rem;text-decoration:none;font-weight:600;}
+      .btn:hover{background:#06357a;}
+      /* --- FOOTER --- */
+      footer {
+        background: var(--brand); color: #fff;
+        text-align: center; padding: 1rem 0; font-size: .875rem;
       }
-    #hero-canvas{position:absolute;bottom:0;left:0;width:100%;height:150px;pointer-events:none;z-index:0;}
-  </style>
-</head>
-<body>
-<header>
-  <h1 class="gradient-title">North Bergen Community Defense</h1>
-  <img src="images/logo.png"
-     alt="North Bergen Community Defense Logo"
-     style="width:100%;max-width:900px;height:300px;margin:1rem 0;">
-  <h2>Grass‑roots organizing for mutual community defense in North Bergen, NJ</h2>
-  <canvas id="hero-canvas" width="800" height="150" style="position:absolute;bottom:0;left:0;width:100%;height:auto;"></canvas>
-</header>
-<main>
- <!-- <section id="events" class="card">
-    <h2>Upcoming Events</h2>
-    <div class="events-grid" id="events-grid"></div>
-  </section> -->
+      .share {
+        margin-top: .5rem; display: flex; justify-content: center;
+        align-items: center; gap: .75rem; flex-wrap: wrap;
+      }
+      .share a {
+        color: #fff; text-decoration: none;
+        display: inline-flex; align-items: center; gap: .25rem; font-size: 1rem;
+      }
+      .share a svg      { width: 18px; height: 18px; fill: #fff; }
+      .share a:hover svg{ fill: var(--accent); }
+      eventFooter {
+        background: var(--brand); color: #0d46a0;
+        text-align: center; padding: 1rem 0; font-size: .875rem;
+      }
+      .shareEvent {
+        margin-top: .5rem; display: flex; justify-content: flex-start;
+        align-items: center; gap: .75rem; flex-wrap: wrap;
+      }
+      .shareEvent a {
+        color: #0d46a0; text-decoration: none;
+        display: inline-flex; align-items: center; gap: .25rem; font-size: 1rem;
+      }
+      .shareEvent a svg      { width: 18px; height: 18px; fill: #0d46a0; }
+      .shareEvent a:hover svg{ fill: red; }
+      .urgentRole { color: red; }
+      h1.gradient-title {
+          background: linear-gradient(90deg, red, white);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
+        }
+      #hero-canvas{position:absolute;bottom:0;left:0;width:100%;height:150px;pointer-events:none;z-index:0;}
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="gradient-title">North Bergen Community Defense</h1>
+      <img src="images/logo.png"
+        alt="North Bergen Community Defense Logo"
+        style="width:100%;max-width:900px;height:300px;margin:1rem 0;">
+      <h2>Grass‑roots organizing for mutual community defense in North Bergen, NJ</h2>
+      <canvas id="hero-canvas" width="800" height="150" style="position:absolute;bottom:0;left:0;width:100%;height:auto;"></canvas>
+    </header>
+    <main>
+    <!-- <section id="events" class="card">
+        <h2>Upcoming Events</h2>
+        <div class="events-grid" id="events-grid"></div>
+      </section> -->
 
-    <section id="join" class="card">
-        <h2>Volunteer Opportunities</h2>
-        <p>We’re a small team trying to build something from the ground up, and we’re 100 % volunteer‑run. Below are the roles we urgently need.</p>
+      <section id="join" class="card">
+        <h2>
+          Volunteer Opportunities
+        </h2>
+        <p>
+          We’re a small team trying to build something from the ground up, and we’re 100 % volunteer‑run. Below are the roles we urgently need.
+        </p>
         <div class="roles-grid">
-          <!-- Role cards (6) -->
           
           <div class="role">
               <h3>Recruiters/Intelligence</h3>
@@ -141,189 +144,189 @@
                 <li>Coordinate with lawyers from related activist groups</li>
                 <li>Coordinate with other leadership team members</li>
             </ul>
-        </div>
-          
-        <div class="role">
-            <h3>Protest &amp; Event Lead</h3>
-            <ul>
-                <li>Plan vigils, press conferences, court‑support rallies</li>
-                <li>Secure permits, liaise with marshals &amp; legal observers</li>
-                <li>Coordinate art, signage, chants, accessible logistics</li>
-                <li>Coordinate with other leadership team members</li>
-            </ul>
-        </div>
-          
-        <p style="text-align:center;margin-top:1rem;"><a class="btn" href="https://forms.gle/u5wQGVmdvCjhK2vk8" target="_blank" rel="noopener">Volunteer →</a></p>
-    </section>
-</main>
 
-<footer>
-    <div class="share">
+            <div class="role">
+              <h3>Protest &amp; Event Lead</h3>
+              <ul>
+                  <li>Plan vigils, press conferences, court‑support rallies</li>
+                  <li>Secure permits, liaise with marshals &amp; legal observers</li>
+                  <li>Coordinate art, signage, chants, accessible logistics</li>
+                  <li>Coordinate with other leadership team members</li>
+              </ul>
+          </div>
+        </div>
+            
+          <p style="text-align:center;margin-top:1rem;"><a class="btn" href="https://forms.gle/u5wQGVmdvCjhK2vk8" target="_blank" rel="noopener">Volunteer →</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="share">
         <span>Share:</span>
 
         <!-- Twitter / X -->
         <a id="share-twitter" aria-label="Share on X/Twitter" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path
-                d="M22.46 6c-.77.35-1.6.58-2.46.69a4.27 4.27 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.71 1.04 4.26 4.26 0 0 0-7.3 3.88A12.1 12.1 0 0 1 3.15 4.8a4.25 4.25 0 0 0 1.32 5.68 4.23 4.23 0 0 1-1.93-.54v.05a4.26 4.26 0 0 0 3.42 4.18 4.3 4.3 0 0 1-1.92.07 4.27 4.27 0 0 0 3.98 2.96A8.55 8.55 0 0 1 2 19.54 12.07 12.07 0 0 0 8.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.35-.02-.53A8.35 8.35 0 0 0 22.46 6z"/>
-            </svg>
+          <svg viewBox="0 0 24 24"><path
+            d="M22.46 6c-.77.35-1.6.58-2.46.69a4.27 4.27 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.71 1.04 4.26 4.26 0 0 0-7.3 3.88A12.1 12.1 0 0 1 3.15 4.8a4.25 4.25 0 0 0 1.32 5.68 4.23 4.23 0 0 1-1.93-.54v.05a4.26 4.26 0 0 0 3.42 4.18 4.3 4.3 0 0 1-1.92.07 4.27 4.27 0 0 0 3.98 2.96A8.55 8.55 0 0 1 2 19.54 12.07 12.07 0 0 0 8.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.35-.02-.53A8.35 8.35 0 0 0 22.46 6z"/>
+          </svg>
         </a>
 
         <!-- Facebook -->
         <a id="share-facebook" aria-label="Share on Facebook" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path
-                d="M22 12A10 10 0 1 0 10.8 21.9v-6.2h-2v-2.5h2v-1.9c0-2 1.2-3.1 3-3.1.9 0 1.8.16 1.8.16v2h-1c-1 0-1.3.64-1.3 1.3v1.6h2.3l-.37 2.5h-1.93V22A10 10 0 0 0 22 12"/>
-            </svg>
+          <svg viewBox="0 0 24 24"><path
+            d="M22 12A10 10 0 1 0 10.8 21.9v-6.2h-2v-2.5h2v-1.9c0-2 1.2-3.1 3-3.1.9 0 1.8.16 1.8.16v2h-1c-1 0-1.3.64-1.3 1.3v1.6h2.3l-.37 2.5h-1.93V22A10 10 0 0 0 22 12"/>
+          </svg>
         </a>
 
         <!-- WhatsApp -->
         <a id="share-whatsapp" aria-label="Share on WhatsApp" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path
-                d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.66.15-.19.3-.76.97-.93 1.17-.17.2-.34.22-.63.07-.29-.15-1.23-.45-2.35-1.43-.87-.77-1.46-1.72-1.63-2-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.5-.17 0-.37-.02-.57-.02-.2 0-.52.07-.8.37-.28.3-1.1 1.05-1.1 2.55 0 1.5 1.1 2.96 1.25 3.17.15.2 2.17 3.42 5.26 4.8.74.32 1.32.5 1.77.64.75.24 1.43.2 1.97.12.6-.1 1.77-.72 2.03-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.9 14.6L2 22l5.5-1.87A10 10 0 1 0 12 2z"/>
-            </svg>
+          <svg viewBox="0 0 24 24"><path
+            d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.66.15-.19.3-.76.97-.93 1.17-.17.2-.34.22-.63.07-.29-.15-1.23-.45-2.35-1.43-.87-.77-1.46-1.72-1.63-2-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.5-.17 0-.37-.02-.57-.02-.2 0-.52.07-.8.37-.28.3-1.1 1.05-1.1 2.55 0 1.5 1.1 2.96 1.25 3.17.15.2 2.17 3.42 5.26 4.8.74.32 1.32.5 1.77.64.75.24 1.43.2 1.97.12.6-.1 1.77-.72 2.03-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.9 14.6L2 22l5.5-1.87A10 10 0 1 0 12 2z"/>
+          </svg>
         </a>
 
         <!-- Email -->
         <a id="share-email" aria-label="Share via Email" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path
-                d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
+          <svg viewBox="0 0 24 24"><path
+            d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
         </a>
-    </div>
-    © <span id="year"></span> North Bergen Community Defense • <a href="mailto:NorthBergenDefense@ProtonMail.com" style="color:var(--accent);">Email&nbsp;Us: NorthBergenDefense@ProtonMail.com</a>
-</footer>
+      </div>
+        © <span id="year"></span> North Bergen Community Defense • <a href="mailto:NorthBergenDefense@ProtonMail.com" style="color:var(--accent);">Email&nbsp;Us: NorthBergenDefense@ProtonMail.com</a>
+    </footer>
 
-<script>
-  // --- DYNAMIC YEAR ---
-  document.getElementById('year').textContent = new Date().getFullYear();
+    <script>
+      // --- DYNAMIC YEAR ---
+      document.getElementById('year').textContent = new Date().getFullYear();
 
-  /* --- SHARE LINKS --- */
-  const url  = encodeURIComponent(window.location.href);
-  const text = encodeURIComponent('North Bergen Community Defense');
-  document.getElementById('share-twitter' ).href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
-  document.getElementById('share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-  document.getElementById('share-whatsapp').href = `https://api.whatsapp.com/send?text=${text}%20${url}`;
-  document.getElementById('share-email'   ).href = `mailto:?subject=${text}&body=${text}%20-%20${url}`;
+      /* --- SHARE LINKS --- */
+      const url  = encodeURIComponent(window.location.href);
+      const text = encodeURIComponent('North Bergen Community Defense');
+      document.getElementById('share-twitter' ).href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+      document.getElementById('share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+      document.getElementById('share-whatsapp').href = `https://api.whatsapp.com/send?text=${text}%20${url}`;
+      document.getElementById('share-email'   ).href = `mailto:?subject=${text}&body=${text}%20-%20${url}`;
 
-  /* Native share sheet on mobile */
-  if (navigator.share) {
-    document.querySelectorAll('.share a').forEach(a => a.style.display = 'none');
-    const btn = document.createElement('button');
-    btn.textContent = 'Share';
-    btn.className   = 'btn';
-    btn.onclick     = () => navigator.share({ title: text, url: window.location.href });
-    document.querySelector('.share').appendChild(btn);
-  }
+      /* Native share sheet on mobile */
+      if (navigator.share) {
+        document.querySelectorAll('.share a').forEach(a => a.style.display = 'none');
+        const btn = document.createElement('button');
+        btn.textContent = 'Share';
+        btn.className   = 'btn';
+        btn.onclick     = () => navigator.share({ title: text, url: window.location.href });
+        document.querySelector('.share').appendChild(btn);
+      }
 
-  // --- PARTICLE HERO ---
-  const canvas = document.getElementById('hero-canvas');
-  const ctx = canvas.getContext('2d');
-  function resize(){canvas.width = canvas.offsetWidth;canvas.height = 150;}
-  window.addEventListener('resize',resize);resize();
-  let particles=[];
-  function initParticles(){
-    particles = Array.from({length:100},()=>({
-      x:Math.random()*canvas.width,
-      y:Math.random()*canvas.height,
-      r:Math.random()*2+1,
-      vx:(Math.random()-.5)*0.5,
-      vy:(Math.random()-.5)*0.5
-    }));
-  }
-  function tick(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(p=>{
-      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,.7)';ctx.fill();
-      p.x+=p.vx;p.y+=p.vy;
-      if(p.x<0||p.x>canvas.width)p.vx*=-1;
-      if(p.y<0||p.y>canvas.height)p.vy*=-1;
-    });
-    requestAnimationFrame(tick);
-  }
-  initParticles();tick();
+      // --- PARTICLE HERO ---
+      const canvas = document.getElementById('hero-canvas');
+      const ctx = canvas.getContext('2d');
+      function resize(){canvas.width = canvas.offsetWidth;canvas.height = 150;}
+      window.addEventListener('resize',resize);resize();
+      let particles=[];
+      function initParticles(){
+        particles = Array.from({length:100},()=>({
+          x:Math.random()*canvas.width,
+          y:Math.random()*canvas.height,
+          r:Math.random()*2+1,
+          vx:(Math.random()-.5)*0.5,
+          vy:(Math.random()-.5)*0.5
+        }));
+      }
+      function tick(){
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        particles.forEach(p=>{
+          ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,.7)';ctx.fill();
+          p.x+=p.vx;p.y+=p.vy;
+          if(p.x<0||p.x>canvas.width)p.vx*=-1;
+          if(p.y<0||p.y>canvas.height)p.vy*=-1;
+        });
+        requestAnimationFrame(tick);
+      }
+      initParticles();tick();
 
-  // --- LOAD EVENTS (supports optional img) ---
-  fetch('events.json')
-    .then(r=>r.ok?r.json():[])
-    .then(events=>{
-      const grid=document.getElementById('events-grid');
-      if(!events.length){grid.innerHTML='<p>No events scheduled. Check back soon!</p>';return;}
-      events.sort((a,b)=>new Date(a.date)-new Date(b.date));
-      const slugify = s => s
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/(^-|-$)/g, "");
-      events.forEach(evt => {
-        const slug = slugify(evt.title);
-        const url  = `${location.origin}${location.pathname}#${slug}`;
+      // --- LOAD EVENTS (supports optional img) ---
+      fetch('events.json')
+        .then(r=>r.ok?r.json():[])
+        .then(events=>{
+          const grid=document.getElementById('events-grid');
+          if(!events.length){grid.innerHTML='<p>No events scheduled. Check back soon!</p>';return;}
+          events.sort((a,b)=>new Date(a.date)-new Date(b.date));
+          const slugify = s => s
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "");
+          events.forEach(evt => {
+            const slug = slugify(evt.title);
+            const url  = `${location.origin}${location.pathname}#${slug}`;
 
-        const el   = document.createElement('div');
-        el.className = 'event';
-        el.id        = slug;                 // ← anchor target
+            const el   = document.createElement('div');
+            el.className = 'event';
+            el.id        = slug;                 // ← anchor target
 
-        const imgHTML = evt.img
-            ? `<img src="${evt.img}" alt="${evt.title}" class="event-img">`
-            : '';
+            const imgHTML = evt.img
+                ? `<img src="${evt.img}" alt="${evt.title}" class="event-img">`
+                : '';
 
-        const ts = new Date(evt.date).toLocaleString(undefined, {
-            weekday:'short', month:'short', day:'numeric',
-            hour:'numeric'});
+            const ts = new Date(evt.date).toLocaleString(undefined, {
+                weekday:'short', month:'short', day:'numeric',
+                hour:'numeric'});
 
-        el.innerHTML = `
-            ${imgHTML}
-            <h3>${evt.title}</h3>
-            <p><strong>${ts}</strong> — ${evt.location}</p>
-            <p>${evt.description}</p>
-            <p style="margin-top:.5rem;">
-                <eventFooter>
-                    <div class="shareEvent">
-                        <div>
-                            <a href="https://mobilize.us/s/m965sx" aria-label="View Event Details">RSVP</a>
+            el.innerHTML = `
+                ${imgHTML}
+                <h3>${evt.title}</h3>
+                <p><strong>${ts}</strong> — ${evt.location}</p>
+                <p>${evt.description}</p>
+                <p style="margin-top:.5rem;">
+                    <eventFooter>
+                        <div class="shareEvent">
+                            <div>
+                                <a href="https://mobilize.us/s/m965sx" aria-label="View Event Details">RSVP</a>
+                            </div>
+                            <strong>Share this event: </strong> 
+                            <!-- Twitter / X -->
+                            <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(evt.title)}" aria-label="Share on X/Twitter" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24"><path
+                                    d="M22.46 6c-.77.35-1.6.58-2.46.69a4.27 4.27 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.71 1.04 4.26 4.26 0 0 0-7.3 3.88A12.1 12.1 0 0 1 3.15 4.8a4.25 4.25 0 0 0 1.32 5.68 4.23 4.23 0 0 1-1.93-.54v.05a4.26 4.26 0 0 0 3.42 4.18 4.3 4.3 0 0 1-1.92.07 4.27 4.27 0 0 0 3.98 2.96A8.55 8.55 0 0 1 2 19.54 12.07 12.07 0 0 0 8.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.35-.02-.53A8.35 8.35 0 0 0 22.46 6z"/>
+                                </svg>
+                            </a>
+
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}" aria-label="Share on Facebook" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24"><path
+                                    d="M22 12A10 10 0 1 0 10.8 21.9v-6.2h-2v-2.5h2v-1.9c0-2 1.2-3.1 3-3.1.9 0 1.8.16 1.8.16v2h-1c-1 0-1.3.64-1.3 1.3v1.6h2.3l-.37 2.5h-1.93V22A10 10 0 0 0 22 12"/>
+                                </svg>
+                            </a>
+
+                            <!-- WhatsApp -->
+                            <a href="https://api.whatsapp.com/send?text=${encodeURIComponent(evt.title)}%20${encodeURIComponent(url)}"" aria-label="Share on WhatsApp" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24"><path
+                                    d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.66.15-.19.3-.76.97-.93 1.17-.17.2-.34.22-.63.07-.29-.15-1.23-.45-2.35-1.43-.87-.77-1.46-1.72-1.63-2-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.5-.17 0-.37-.02-.57-.02-.2 0-.52.07-.8.37-.28.3-1.1 1.05-1.1 2.55 0 1.5 1.1 2.96 1.25 3.17.15.2 2.17 3.42 5.26 4.8.74.32 1.32.5 1.77.64.75.24 1.43.2 1.97.12.6-.1 1.77-.72 2.03-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.9 14.6L2 22l5.5-1.87A10 10 0 1 0 12 2z"/>
+                                </svg>
+                            </a>
+
+                            <!-- Email -->
+                            <a href="mailto:?subject=${encodeURIComponent(evt.title)}&body=${encodeURIComponent(evt.title)}%20-%20${encodeURIComponent(url)}" aria-label="Share via Email" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24"><path
+                                    d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </a>
                         </div>
-                        <strong>Share this event: </strong> 
-                        <!-- Twitter / X -->
-                        <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(evt.title)}" aria-label="Share on X/Twitter" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24"><path
-                                d="M22.46 6c-.77.35-1.6.58-2.46.69a4.27 4.27 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.71 1.04 4.26 4.26 0 0 0-7.3 3.88A12.1 12.1 0 0 1 3.15 4.8a4.25 4.25 0 0 0 1.32 5.68 4.23 4.23 0 0 1-1.93-.54v.05a4.26 4.26 0 0 0 3.42 4.18 4.3 4.3 0 0 1-1.92.07 4.27 4.27 0 0 0 3.98 2.96A8.55 8.55 0 0 1 2 19.54 12.07 12.07 0 0 0 8.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.35-.02-.53A8.35 8.35 0 0 0 22.46 6z"/>
-                            </svg>
-                        </a>
+                    <eventFooter>
+                </p>`;
 
-                        <!-- Facebook -->
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}" aria-label="Share on Facebook" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24"><path
-                                d="M22 12A10 10 0 1 0 10.8 21.9v-6.2h-2v-2.5h2v-1.9c0-2 1.2-3.1 3-3.1.9 0 1.8.16 1.8.16v2h-1c-1 0-1.3.64-1.3 1.3v1.6h2.3l-.37 2.5h-1.93V22A10 10 0 0 0 22 12"/>
-                            </svg>
-                        </a>
+            grid.appendChild(el);
+            if (navigator.share) {
+              document.querySelectorAll('.shareEvent a').forEach(a => a.style.display = 'none');
+              const btn = document.createElement('button');
+              btn.textContent = 'Share';
+              btn.className   = 'btn';
+              btn.onclick     = () => navigator.share({ title: evt.title, url: url });
+              document.querySelector('.shareEvent').appendChild(btn);
+            }
+          });
 
-                        <!-- WhatsApp -->
-                        <a href="https://api.whatsapp.com/send?text=${encodeURIComponent(evt.title)}%20${encodeURIComponent(url)}"" aria-label="Share on WhatsApp" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24"><path
-                                d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.66.15-.19.3-.76.97-.93 1.17-.17.2-.34.22-.63.07-.29-.15-1.23-.45-2.35-1.43-.87-.77-1.46-1.72-1.63-2-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.5-.17 0-.37-.02-.57-.02-.2 0-.52.07-.8.37-.28.3-1.1 1.05-1.1 2.55 0 1.5 1.1 2.96 1.25 3.17.15.2 2.17 3.42 5.26 4.8.74.32 1.32.5 1.77.64.75.24 1.43.2 1.97.12.6-.1 1.77-.72 2.03-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.9 14.6L2 22l5.5-1.87A10 10 0 1 0 12 2z"/>
-                            </svg>
-                        </a>
-
-                        <!-- Email -->
-                        <a href="mailto:?subject=${encodeURIComponent(evt.title)}&body=${encodeURIComponent(evt.title)}%20-%20${encodeURIComponent(url)}" aria-label="Share via Email" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24"><path
-                                d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                            </svg>
-                        </a>
-                    </div>
-                <eventFooter>
-            </p>`;
-
-        grid.appendChild(el);
-        if (navigator.share) {
-          document.querySelectorAll('.shareEvent a').forEach(a => a.style.display = 'none');
-          const btn = document.createElement('button');
-          btn.textContent = 'Share';
-          btn.className   = 'btn';
-          btn.onclick     = () => navigator.share({ title: evt.title, url: url });
-          document.querySelector('.shareEvent').appendChild(btn);
-        }
-      });
-
-    })
-    .catch(()=>{document.getElementById('events-grid').innerHTML='<p>Could not load events.</p>';});
-</script>
-</body>
+        })
+        .catch(()=>{document.getElementById('events-grid').innerHTML='<p>Could not load events.</p>';});
+    </script>
+  </body>
 </html>
